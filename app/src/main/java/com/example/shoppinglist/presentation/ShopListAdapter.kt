@@ -1,22 +1,12 @@
 package com.example.shoppinglist.presentation
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ListAdapter
 import com.example.shoppinglist.R
 import com.example.shoppinglist.domain.ShopItem
-import java.lang.RuntimeException
 
-class ShopListAdapter() : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>() {
-
-    var shopList = listOf<ShopItem>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
+class ShopListAdapter : ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCallback()) {
 
     var onShopItemLongClickListener: ((ShopItem) -> Unit)? = null
     var onShopItemClickListener: ((ShopItem) -> Unit)? = null
@@ -36,7 +26,7 @@ class ShopListAdapter() : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolde
     }
 
     override fun onBindViewHolder(viewHolder: ShopItemViewHolder, position: Int) {
-        val shopItem = shopList[position]
+        val shopItem = getItem(position)
         viewHolder.view.setOnLongClickListener {
             onShopItemLongClickListener?.invoke(shopItem)
             true
@@ -48,22 +38,13 @@ class ShopListAdapter() : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolde
         viewHolder.tvAmount.text = shopItem.amount.toString()
     }
 
-    override fun getItemCount(): Int {
-        return shopList.size
-    }
-
     override fun getItemViewType(position: Int): Int {
-        val view = shopList[position]
+        val view = getItem(position)
         return if (view.enabled) {
             VIEW_TYPE_ENABLED
         } else {
             VIEW_TYPE_DISABLED
         }
-    }
-
-    class ShopItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val tvName = view.findViewById<TextView>(R.id.tvName)
-        val tvAmount = view.findViewById<TextView>(R.id.tvAmount)
     }
 
     companion object {
