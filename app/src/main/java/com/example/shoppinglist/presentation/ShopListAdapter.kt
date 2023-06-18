@@ -35,7 +35,7 @@ class ShopListAdapter : ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCa
             onShopItemClickListener?.invoke(shopItem)
         }
         viewHolder.tvName.text = shopItem.name
-        viewHolder.tvAmount.text = shopItem.amount.toString()
+        viewHolder.tvAmount.text = shopItem.count.toString()
     }
 
     override fun getItemViewType(position: Int): Int {
