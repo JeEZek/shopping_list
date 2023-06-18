@@ -43,9 +43,9 @@
         android:id="@+id/b_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FAAC9F"
+        android:backgroundTint="@color/additional"
         android:text="@string/save"
-        android:textColor="#5C4F34"
+        android:textColor="@color/main_text"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="VisualLintButtonSize" />
