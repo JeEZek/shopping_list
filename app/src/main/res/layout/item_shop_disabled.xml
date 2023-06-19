@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#80DDCDA5"
+        android:background="@color/second_main"
         android:orientation="horizontal"
         android:padding="16dp">
 
@@ -20,7 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#805C4F34"
+            android:textColor="@color/second_main_text"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Салфетки" />
@@ -29,7 +29,7 @@
             android:id="@+id/tvAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#805C4F34"
+            android:textColor="@color/second_main_text"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="1" />
