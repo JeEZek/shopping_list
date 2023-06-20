@@ -14,11 +14,11 @@ object ShopListRepositoryImpl: ShopListRepository {
 
     private var autoIncrementId = 0
 
-    init {
-        for (i in 0..1000) {
-            addShopItem(ShopItem("Name $i", i, Random.nextBoolean()))
-        }
-    }
+//    init {
+//        for (i in 0..10) {
+//            addShopItem(ShopItem("Name $i", i, Random.nextBoolean()))
+//        }
+//    }
 
     override fun addShopItem(shopItem: ShopItem) {
         if (shopItem.id == ShopItem.UNDEFINED_ID) {
