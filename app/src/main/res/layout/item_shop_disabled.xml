@@ -1,39 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="4dp"
-    app:cardElevation="1dp"
-    app:cardUseCompatPadding="true">
+<layout>
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="ShopItem"
+            type="com.example.shoppinglist.domain.ShopItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/second_main"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        app:cardCornerRadius="4dp"
+        app:cardElevation="1dp"
+        app:cardUseCompatPadding="true">
 
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/second_main_text"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="Салфетки" />
+            android:background="@color/second_main"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/second_main_text"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="1" />
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{ShopItem.name}"
+                android:textColor="@color/second_main_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Салфетки" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(ShopItem.count)}"
+                android:textColor="@color/second_main_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="1" />
 
-</androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
