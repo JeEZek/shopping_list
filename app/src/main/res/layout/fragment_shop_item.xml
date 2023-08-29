@@ -43,17 +43,14 @@
             app:layout_constraintBottom_toTopOf="@+id/b_add"
             app:layout_constraintTop_toBottomOf="@+id/til_name">
 
-            <!--
-           //TODO add adapter in BindingAdapters
-           because if u do like this "String.valueOf" user will see 0 instead of hint
-           -->
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/count"
                 android:inputType="number"
-                android:text="@{String.valueOf(viewModel.shopItem.count)}"
+                app:inputCountText="@{viewModel.shopItem.count}"
                 android:textSize="20sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
