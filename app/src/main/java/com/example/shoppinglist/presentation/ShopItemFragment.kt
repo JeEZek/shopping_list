@@ -1,26 +1,18 @@
 package com.example.shoppinglist.presentation
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.core.widget.doAfterTextChanged
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.shoppinglist.R
-import com.example.shoppinglist.databinding.ActivityMainBinding
 import com.example.shoppinglist.databinding.FragmentShopItemBinding
-import com.example.shoppinglist.domain.ShopItem
 import com.example.shoppinglist.domain.ShopItem.Companion.UNDEFINED_ID
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import javax.inject.Inject
 
-class ShopItemFragment: Fragment() {
+class ShopItemFragment : Fragment() {
 
     private lateinit var viewModel: ShopItemViewModel
     private lateinit var onEditingFinishedListener: OnEditingFinishedListener
@@ -159,3 +151,4 @@ class ShopItemFragment: Fragment() {
         }
     }
 }
+

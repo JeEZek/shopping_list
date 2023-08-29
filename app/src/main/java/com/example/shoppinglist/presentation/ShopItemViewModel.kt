@@ -3,10 +3,12 @@ package com.example.shoppinglist.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.shoppinglist.domain.AddShopItemUseCase
 import com.example.shoppinglist.domain.EditShopItemUseCase
 import com.example.shoppinglist.domain.GetShopItemUseCase
 import com.example.shoppinglist.domain.ShopItem
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ShopItemViewModel @Inject constructor(
